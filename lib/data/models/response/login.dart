@@ -1,3 +1,5 @@
+
+//response from signIn converted to dart
 class LoginResponse {
   final bool? status;
   final String? message;

@@ -3,7 +3,7 @@ import 'package:flutter_overlay_loader/flutter_overlay_loader.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:smart_pay/core/reusable_widgets/app_text.dart';
 import 'package:smart_pay/core/size_config.dart';
-
+//constants
 class Palette{
 static const Color backgroundColor = Color(0xFFFFFFFF);
 static const Color primaryColor = Color(0xFF111827);

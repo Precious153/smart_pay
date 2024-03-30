@@ -1,3 +1,5 @@
+//response from signUp converted to dart
+
 class RegisterResponse {
   final bool? status;
   final String? message;

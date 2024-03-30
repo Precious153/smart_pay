@@ -51,11 +51,7 @@ class _RegisterUserState extends State<RegisterUser> {
       CXLoader.hide();
     }
   }
-  @override
-  initState() {
-    super.initState();
-    print(widget.email);
-  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig.init(context);
@@ -187,7 +183,7 @@ class _RegisterUserState extends State<RegisterUser> {
                               fontSize: 16,
                               fontFamily: FontFamily.sfProDisplay,
                               weight: FontWeight.w400,
-                              colorName:  selectedCountry.isNotEmpty?Palette.textColor1:Palette.hintColor,
+                              colorName:  selectedCountry.isNotEmpty?Palette.blackColor:Palette.hintColor,
                             ),
                             const Icon(
                               Icons.keyboard_arrow_down,

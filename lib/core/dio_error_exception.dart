@@ -1,6 +1,6 @@
 
 import 'package:dio/dio.dart';
-
+// dio exception to catch error
 class DioExceptions implements Exception {
   DioExceptions.fromDioError(DioError dioError) {
     switch (dioError.type) {

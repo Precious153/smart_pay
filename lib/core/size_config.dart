@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// for responsiveness
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
   static late double screenWidth;

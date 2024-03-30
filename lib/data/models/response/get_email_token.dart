@@ -1,3 +1,5 @@
+
+//response from GetEmailToken converted to dart
 class GetEmailToken {
   final bool? status;
   final String? message;

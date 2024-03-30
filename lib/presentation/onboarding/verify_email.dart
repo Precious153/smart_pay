@@ -7,7 +7,7 @@ import 'package:smart_pay/presentation/onboarding/register_user.dart';
 import '../../core/reusable_widgets/app_button.dart';
 import '../../core/reusable_widgets/app_text.dart';
 import '../../data/services/verify_email.dart';
-
+// verify email class
 class VerifyEmail extends StatefulWidget {
   const VerifyEmail({super.key, required this.token, required this.email});
 

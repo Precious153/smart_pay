@@ -19,6 +19,7 @@ class SetPin extends StatefulWidget {
 class _SetPinState extends State<SetPin> {
   final GlobalKey<FormState> _pinPinKey = GlobalKey<FormState>();
   final _pinController = TextEditingController();
+  bool _isActive = false;
 
   @override
   Widget build(BuildContext context) {
@@ -102,6 +103,7 @@ class _SetPinState extends State<SetPin> {
                         }
                       },
                       onCompleted: (v) {
+                        _isActive=true;
                       },
                       onChanged: (value) {
                         setState(() {
@@ -116,13 +118,13 @@ class _SetPinState extends State<SetPin> {
                 ),
                 SizedBox(height: getProportionateScreenHeight(123),),
                 BuildButton(
-                  onTap: () {
+                  onTap: _isActive?() {
                      Navigator.push(context, MaterialPageRoute(builder: (context)=> CongratsScreen(name: widget.firstName,)));
-                  },
+                  }:null,
                   height: getProportionateScreenHeight(56),
                   width: double.infinity,
                   borderRadius: BorderRadius.circular(16),
-                  buttonColor: Palette.primaryColor.withOpacity(0.70),
+                  buttonColor: _isActive?Palette.primaryColor:Palette.primaryColor.withOpacity(0.70),
                   child: const Center(
                     child: CreateGeneralText(
                       inputText: 'Continue',

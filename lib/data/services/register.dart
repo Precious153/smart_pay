@@ -7,7 +7,7 @@ import '../../core/dio_error_exception.dart';
 import '../models/response/get_email_token.dart';
 import '../models/response/register.dart';
 import '../storage/storage.dart';
-
+//service class for register
 class RegisterService{
   static final Dio dio = Dio();
   static Future<RegisterResponse?> register({

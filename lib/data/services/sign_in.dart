@@ -8,7 +8,7 @@ import '../models/response/get_email_token.dart';
 import '../models/response/login.dart';
 import '../models/response/register.dart';
 import '../storage/storage.dart';
-
+// service class for signIn
 class LoginService{
   static final Dio dio = Dio();
   static Future<LoginResponse?> login({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../size_config.dart';
-
+// text
 class CreateGeneralText extends StatelessWidget {
   const CreateGeneralText({
     super.key,
