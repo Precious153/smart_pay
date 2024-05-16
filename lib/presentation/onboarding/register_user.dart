@@ -106,11 +106,6 @@ class _RegisterUserState extends State<RegisterUser> {
                   BuildInputField(
                       inputController: _fullNameController,
                       inputHintText: 'Full name',
-                      onFieldSubmitted: (value) {
-                        setState(() {
-                          _isActive = true;
-                        });
-                      },
                       keyboardType: TextInputType.name),
                   SizedBox(
                     height: getProportionateScreenHeight(16),
@@ -118,11 +113,7 @@ class _RegisterUserState extends State<RegisterUser> {
                   BuildInputField(
                       inputController: _userNameController,
                       inputHintText: 'Username',
-                      onFieldSubmitted: (value) {
-                        setState(() {
-                          _isActive = true;
-                        });
-                      },
+
                       keyboardType: TextInputType.name),
                   SizedBox(
                     height: getProportionateScreenHeight(16),
@@ -206,17 +197,13 @@ class _RegisterUserState extends State<RegisterUser> {
                         _isObscured = !_isObscured;
                       });
                     },
-                    onFieldSubmitted: (value) {
-                      setState(() {
-                        _isActive = true;
-                      });
-                    },
+
                   ),
                   SizedBox(
                     height: getProportionateScreenHeight(24),
                   ),
                   BuildButton(
-                    onTap: _isActive?() {
+                    onTap:() {
                       if (_fullNameController.text.isEmpty) {
                         kToastMsgPopUp(context,
                             message: 'Fill in the full name');
@@ -234,11 +221,11 @@ class _RegisterUserState extends State<RegisterUser> {
                       } else {
                         register();
                       }
-                    }:null,
+                    },
                     height: getProportionateScreenHeight(56),
                     width: double.infinity,
                     borderRadius: BorderRadius.circular(16),
-                    buttonColor:_isActive?Palette.primaryColor: Palette.primaryColor.withOpacity(0.70),
+                    buttonColor:Palette.primaryColor,
                     child: const Center(
                       child: CreateGeneralText(
                         inputText: 'Continue',

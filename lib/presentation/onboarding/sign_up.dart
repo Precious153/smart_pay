@@ -21,6 +21,7 @@ class _SignUpState extends State<SignUp> {
   final _emailController = TextEditingController();
   bool _isActive = false;
 
+
   getEmailToken()async {
     if (_key.currentState?.validate() ?? false) {
       _key.currentState?.save();
@@ -96,27 +97,26 @@ class _SignUpState extends State<SignUp> {
                   BuildEmailInputField(
                       inputController: _emailController,
                       inputHintText: 'Email',
-                      onFieldSubmitted: (value) {
-                        setState(() {
-                          _isActive = true;
-                        });
-                      },
-                      keyboardType: TextInputType.emailAddress),
+                      keyboardType: TextInputType.emailAddress,
+                    onChanged: (text) {
+
+                    },
+                  ),
                   SizedBox(
                     height: getProportionateScreenHeight(24),
                   ),
                 BuildButton(
-                    onTap: _isActive?() {
+                    onTap: () {
                       if (_emailController.text.isEmpty) {
                         kToastMsgPopUp(context, message: 'Email field is empty');
                       }else {
                         getEmailToken();
                       }
-                    }:null,
+                    },
                     height: getProportionateScreenHeight(56),
                     width: double.infinity,
                     borderRadius: BorderRadius.circular(16),
-                    buttonColor: _isActive?Palette.primaryColor:Palette.primaryColor.withOpacity(0.70),
+                    buttonColor: Palette.primaryColor,
                     child: const Center(
                       child: CreateGeneralText(
                         inputText: 'Sign Up',

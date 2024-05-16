@@ -103,7 +103,6 @@ class _SetPinState extends State<SetPin> {
                         }
                       },
                       onCompleted: (v) {
-                        _isActive=true;
                       },
                       onChanged: (value) {
                         setState(() {
@@ -118,13 +117,13 @@ class _SetPinState extends State<SetPin> {
                 ),
                 SizedBox(height: getProportionateScreenHeight(123),),
                 BuildButton(
-                  onTap: _isActive?() {
+                  onTap: () {
                      Navigator.push(context, MaterialPageRoute(builder: (context)=> CongratsScreen(name: widget.firstName,)));
-                  }:null,
+                  },
                   height: getProportionateScreenHeight(56),
                   width: double.infinity,
                   borderRadius: BorderRadius.circular(16),
-                  buttonColor: _isActive?Palette.primaryColor:Palette.primaryColor.withOpacity(0.70),
+                  buttonColor: Palette.primaryColor,
                   child: const Center(
                     child: CreateGeneralText(
                       inputText: 'Continue',

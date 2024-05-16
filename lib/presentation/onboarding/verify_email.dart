@@ -137,29 +137,31 @@ class _VerifyEmailState extends State<VerifyEmail> {
                       left: getProportionateScreenWidth(8),
                     ),
                     child: PinCodeTextField(
+
                       autovalidateMode: AutovalidateMode.disabled,
                       controller: _emailOtpController,
                       keyboardType: TextInputType.number,
                       appContext: context,
                       length: 5,
+
                       textStyle: const TextStyle(
-                          color: Palette.textColor,
+                          color: Palette.primaryColor,
                           fontWeight: FontWeight.w400,
-                          fontSize: 16,
+                          fontSize: 24,
                           fontFamily: FontFamily.sfProDisplay
                       ),
                        animationType: AnimationType.fade,
                       pinTheme: PinTheme(
                         activeColor: Palette.fillColor,
-                        inactiveColor: Palette.fillColor,
+                         inactiveColor:Palette.fillColor,
                         shape: PinCodeFieldShape.box,
+
                         borderRadius: BorderRadius.circular(12),
                         fieldHeight: 56,
                         fieldWidth: 56,
-                        activeFillColor: Palette.fillColor,
+                        // activeFillColor: Palette.fillColor,
                       ),
                       cursorColor: Palette.blackColor,
-                      // enableActiveFill: true,
                       animationDuration: const Duration(milliseconds: 300),
                       validator: (v) {
                         if (v!.length < 5) {
@@ -169,7 +171,6 @@ class _VerifyEmailState extends State<VerifyEmail> {
                         }
                       },
                       onCompleted: (v) {
-                         _isActive = true;
                       },
                       onChanged: (value) {
                         setState(() {
@@ -199,17 +200,17 @@ class _VerifyEmailState extends State<VerifyEmail> {
                   height: getProportionateScreenHeight(67),
                 ),
                 BuildButton(
-                  onTap: _isActive?() {
+                  onTap: () {
                     if (_emailOtpController.text.isEmpty) {
-                      kToastMsgPopUp(context, message: 'Email field is empty');
+                      kToastMsgPopUp(context, message: 'Otp field is empty');
                     }else {
                       verifyEmail();
                     }
-                  }:null,
+                  },
                   height: getProportionateScreenHeight(56),
                   width: double.infinity,
                   borderRadius: BorderRadius.circular(16),
-                  buttonColor: _isActive?Palette.primaryColor:Palette.primaryColor.withOpacity(0.70),
+                  buttonColor: Palette.primaryColor,
                   child: const Center(
                     child: CreateGeneralText(
                       inputText: 'Confirm',
