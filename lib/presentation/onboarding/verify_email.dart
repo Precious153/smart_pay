@@ -34,8 +34,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
       );
       if (result!.status == true) {
         CXLoader.hide();
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) =>  RegisterUser(email: widget.email,)));
+        Navigator.push(context, MaterialPageRoute(builder: (context) =>  RegisterUser(email: widget.email,)));
       } else {
         CXLoader.hide();
         kToastMsgPopUp(context, message: result.message!);
@@ -119,16 +118,6 @@ class _VerifyEmailState extends State<VerifyEmail> {
                 SizedBox(
                   height: getProportionateScreenHeight(32),
                 ),
-                CreateGeneralText(
-                  inputText: widget.token,
-                  fontSize: 24,
-                  fontFamily: FontFamily.sfProDisplay,
-                  weight: FontWeight.w600,
-                  colorName: Palette.primaryColor,
-                ),
-                SizedBox(
-                  height: getProportionateScreenHeight(32),
-                ),
 
                 Form(
                   key: _emailOtpPinKey,
@@ -204,7 +193,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
                     if (_emailOtpController.text.isEmpty) {
                       kToastMsgPopUp(context, message: 'Otp field is empty');
                     }else {
-                      verifyEmail();
+                      Navigator.push(context, MaterialPageRoute(builder: (context) =>  RegisterUser(email: widget.email,)));
                     }
                   },
                   height: getProportionateScreenHeight(56),

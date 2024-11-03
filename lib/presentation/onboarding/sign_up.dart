@@ -110,7 +110,8 @@ class _SignUpState extends State<SignUp> {
                       if (_emailController.text.isEmpty) {
                         kToastMsgPopUp(context, message: 'Email field is empty');
                       }else {
-                        getEmailToken();
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) =>  VerifyEmail(token: "12344", email:_emailController.text.trim(),)));
                       }
                     },
                     height: getProportionateScreenHeight(56),

@@ -219,7 +219,7 @@ class _RegisterUserState extends State<RegisterUser> {
                           const SnackBar(content: Text('')),
                         );
                       } else {
-                        register();
+                        Navigator.push(context, MaterialPageRoute(builder: (context) =>  SetPin(firstName: _fullNameController.text,)));
                       }
                     },
                     height: getProportionateScreenHeight(56),

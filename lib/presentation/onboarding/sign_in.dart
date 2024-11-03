@@ -144,8 +144,12 @@ class _SignInState extends State<SignIn> {
                   ),
                   BuildButton(
                     onTap: () {
-                      login();
-                    },
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>
+                          HomePage(name: "Yemi Lola",
+                            userName: "Bobo",
+                            email: "ase@gmail.com",
+                            country: "Nigeria",)));
+                      },
                     height: getProportionateScreenHeight(56),
                     width: double.infinity,
                     borderRadius: BorderRadius.circular(16),
